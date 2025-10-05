@@ -54,7 +54,7 @@ namespace HTVXTry
 
         private static void Recognition_SpeechRecognized(object? sender, SpeechRecognizedEventArgs e)
         {
-            Word = e.Result.Text;
+            //Word = e.Result.Text;
         }
 
         private static void Recognition_SpeechDetected(object? sender, SpeechDetectedEventArgs e)
@@ -81,19 +81,20 @@ namespace HTVXTry
                 //RecognitionResult Result = Recognition.EmulateRecognize("Begin");
 
                 Rec.SetInputToDefaultAudioDevice();
-                RecognitionResult ResultRec = Rec.Recognize(TimeSpan.FromSeconds(3.5));
+                RecognitionResult ResultRec = Rec.Recognize(TimeSpan.FromSeconds(2));
 
                 // Try to get the word from the RecognitionResult
-                //if (ResultRec != null)
-                //{
-                //    Word = ResultRec.Text;
-                //    Message.Text = Word;
-                //}
-                //else
-                //{
-                //    Message.FontSize = 50.0;
-                //    Word = "null";
-                //}
+                if (ResultRec == null)
+                {
+                    Message.FontSize = 50.0;
+                    Word = "null";
+                }
+                else
+                {
+                    Word = ResultRec.Text;
+                    Message.Text = Word;
+                    
+                }
             }
             return Word;
         }

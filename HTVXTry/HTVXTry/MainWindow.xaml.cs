@@ -20,7 +20,6 @@ namespace HTVXTry
         public MainWindow()
         {
             InitializeComponent();
-            Microphone.MakeMenuGrammar();
         }
 
         // Click function to start
@@ -34,6 +33,7 @@ namespace HTVXTry
         {
             if (Microphone.AlwaysMic) { return; }
 
+            Microphone.MakeMenuGrammar();
             Microphone.Mic(CommandText);
             switch (Microphone.Word)
             {
@@ -59,10 +59,15 @@ namespace HTVXTry
                     Credits();
                     break;
                 case "null":
-                    DisplayAudioError();
+                    //DisplayAudioError();
+                    CommandText.Text = Microphone.Word + "Error";
+                    break;
+                case null:
+                    Credits();
                     break;
                 default:
                     DisplayAudioError();
+                    //CommandText.Text = Microphone.Word;
                     break;
             }
         }
