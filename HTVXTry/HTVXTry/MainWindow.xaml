@@ -1,0 +1,16 @@
+﻿<Window x:Class="HTVXTry.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HTVXTry"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="Title" Margin="340,81,340,0" TextWrapping="Wrap" Text="HTV" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,0" FontSize="50" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="StartButton" Content="StartButton" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Malgun Gothic" FontSize="18" Click="StartClick" Margin="122,67,0,0"/>
+        <Button x:Name="MicButton" Content="Mic" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Malgun Gothic" FontSize="18" Margin="10,301,0,0" Click="MicButton_Click"/>
+        <TextBox x:Name="CommandText" Margin="246,0,246,0" TextWrapping="Wrap" Text="HTV" VerticalAlignment="Center" BorderThickness="0,0,0,0" FontSize="18
+" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    </Grid>
+</Window>
